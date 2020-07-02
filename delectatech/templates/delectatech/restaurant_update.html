@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="padding-top:10%">
+      <h2>Edit Restaurant</h2>
+      </br>
+      <form _ngcontent-serverapp-c76 method="POST" class="ng-pristine ng-valid ng-star-inserted ng-touched">{% csrf_token %}
+          <div class="form-group">
+            {{ form.as_p }}
+          </div>
+          <button class="btn btn-primary" type="submit">Update</button>
+
+      </form>
+    </div>
+{% endblock %}

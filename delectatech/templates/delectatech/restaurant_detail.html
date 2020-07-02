@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="padding-top:10%">
+        <div> <button class="btn btn-primary" type="button">
+          <a href="{% url restaurant_update %}">Edit Restaurant</button>
+        </div>
+        <h2>{{ restaurant.name }}</h2>
+        <p>{{ restaurant.street_address }}</p>
+        <p>{{ restaurant.latitude }}</p>
+        <p>{{ restaurant.longitude }}</p>
+        <p>{{ restaurant.city_name }}</p>
+        <p>{{ restaurant.popularity_rate }}</p>
+        <p>{{ restaurant.satisfaction_rate }}</p>
+        <p>{{ restaurant.total_reviews }}</p>
+        <p>{{ restaurant.average_price }}</p>
+
+    </div>
+{% endblock %}

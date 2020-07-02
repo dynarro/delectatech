@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="padding-top:10%">
+      <div> <button class="btn btn-primary" type="button">
+        <a href="{% url segment_update %}">Edit Segment</button>
+      </div>
+        <h2>{{ segment.name }}</h2>
+        <p>Avg popularity rate: {{ segment.average_popularity_rate }}</p>
+        <p>Avg satisfaction_rate: {{ segment.average_satisfaction_rate }}</p>
+        <p>Avg price: {{ segment.average_price }}</p>
+        <p>Total reviews: {{ segment.total_reviews }}</p>
+        <ul>Restaurants: <li>{{ segment.restaurants }}<li>  </ul>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="padding-top:10%">
+      <h2>New Segment</h2>
+      <form method="POST" class="post-form">{% csrf_token %}
+          <div class="form-group">
+            {{ form.as_p }}
+            <button class="btn btn-primary btn-xl" type="submit">Save</button>
+          </div>
+        </form>
+    </div>
+{% endblock %}
