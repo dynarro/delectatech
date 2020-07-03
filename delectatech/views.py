@@ -30,12 +30,10 @@ class SegmentCreateView(CreateView):
 
 class RestaurantDetailView(DetailView):
     model = Restaurant
-    lookup_field = "uuidentifier"
 
 
 class SegmentDetailView(DetailView):
     model = Segment
-    lookup_field = "uuidentifier"
 
 
 class RestaurantUpdateView(UpdateView):
