@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
     <div style="padding-top:10%">
-      <h2>New Segment</h2>
-      <form method="POST" class="post-form">{% csrf_token %}
-          <div class="form-group">
-            {{ form.as_p }}
-            <button class="btn btn-primary btn-xl" type="submit">Save</button>
+      <h2 style="padding-left:1em;">New Segment</h2>
+      </br>
+      <form _ngcontent-serverapp-c76 method="POST" class="ng-pristine ng-valid ng-star-inserted ng-touched">{% csrf_token %}
+        {% for field in form %}
+          <div class="row" style="padding-left:2em;">
+             <div class="col-md-2">
+              <p>{{ field.label_tag }}</p>
+              {% if field.help_text %}
+                <sup>{{ field.help_text }}</sup>
+              {% endif %}
+              {{ field.errors }}
+             </div>
+             <div class="col-md-3 pull-left">
+               {{ field }}
+             </div>
           </div>
-        </form>
+        {% endfor %}
+          <div style="padding-left:15%"><button class="btn btn-primary" type="submit">Save</button></div>
+
+      </form>
     </div>
 {% endblock %}

@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
     <div style="padding-top:10%">
-      <h2>Edit Restaurant</h2>
+      <h2 style="padding-left:1em;">Edit restaurant</h2>
       </br>
       <form _ngcontent-serverapp-c76 method="POST" class="ng-pristine ng-valid ng-star-inserted ng-touched">{% csrf_token %}
-          <div class="form-group">
-            {{ form.as_p }}
+        {% for field in form %}
+          <div class="row" style="padding-left:2em;">
+             <div class="col-md-2">
+              <p>{{ field.label_tag }}</p>
+              {% if field.help_text %}
+                <sup>{{ field.help_text }}</sup>
+              {% endif %}
+              {{ field.errors }}
+             </div>
+             <div class="col-md-3 pull-left">
+               {{ field }}
+             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Update</button>
+        {% endfor %}
+          <div style="padding-left:15%"><button class="btn btn-primary" type="submit">Update</button></div>
 
       </form>
     </div>

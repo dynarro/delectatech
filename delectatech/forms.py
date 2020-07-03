@@ -16,6 +16,6 @@ class SegmentForm(forms.ModelForm):
 
     class Meta:
         model = Segment
-        fields = ('name', 'average_popularity_rate',
+        fields = ('name','average_popularity_rate',
         'average_satisfaction_rate', 'average_price','total_reviews',
         'restaurants')

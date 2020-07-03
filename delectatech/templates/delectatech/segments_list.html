@@ -3,7 +3,7 @@
   {% for segment in segments %}
     <div_ngcontent-serverapp-c78 class="contents flex-grow-1 ng-tns-c78-2 ng-trigger ng-trigger-subMenuAnimation" style="left: 0px; padding-bottom: 10%;">
       <div _ngcontent-serverapp-c78 class="cdk-drag list-group-item d-flex justify-content-start align-items-center ng-tns-c78-2 ng-star-inserted">
-        <p><a href="{% url 'segment_detail' pk=segment.uidentifier %}">{{ segment }}</p>
+        <p><a href="{% url 'delectatech:segment_detail' pk=segment.uidentifier %}">{{ segment }}</p>
       </div>
     </div>
   {% endfor %}

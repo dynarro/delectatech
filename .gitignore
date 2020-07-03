@@ -1,0 +1,9 @@
+*.pyc
+*~
+/.vscode
+delecta_tech/__pycache__
+delectatech/__pycache__
+__pycache__
+delectatenv
+/static
+delectatech/migrations

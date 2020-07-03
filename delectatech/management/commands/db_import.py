@@ -8,16 +8,18 @@ class Command(BaseCommand):
         with open('/home/doraly/Documents/Prueba Tecnica/restaurants_input.json') as data_file:
             json_data = json.load(data_file)
 
-            for restaurant_data in json_data:
+            # Imports only 10 objects to avoid to much data
+            for restaurant_data in json_data[:10]:
                 restaurant = Restaurant(**restaurant_data)
                 restaurant.save()
-            self.stdout.write("restaurants imported")
+            self.stdout.write("restaurants imported successfully!")
 
         with open('/home/doraly/Documents/Prueba Tecnica/segments_input.json') as segments_file:
             seg_data = json.load(segments_file)
 
-            for segment_data in seg_data:
-                for data in seg_data[3]:
-                    segment = Segment(data)
+            for data in seg_data:
+                # Imports only 10 objects to avoid to much data
+                for restaurant in data['restaurants'][:10]:
+                    segment = Segment(restaurant)
                     segment.save()
-            self.stdout.write("segments imported")
+            self.stdout.write("segments imported successfully!")
